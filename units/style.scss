@@ -1,0 +1,218 @@
+.header{
+    &__ul{
+        list-style: none;
+        display: flex;
+        justify-content: right;
+        gap: 20px;
+        padding: 50px;
+    }
+    &__a{
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+    }
+    &__nav {
+        transform: translateY(-20px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    &__nav.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.header {
+    &__nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ade8f4;
+
+        transform: translateY(-20px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    &__nav.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ade8f4;
+    position: relative;
+
+    &__burger {
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background-color: #000;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+    }
+
+    &__nav {
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ade8f4;
+    }
+
+    &__nav.is-open {
+        display: block;
+    }
+
+    &__ul {
+        list-style: none;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    &__a {
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+    }
+}
+/* Animation du menu burger */
+.header {
+    &__burger {
+        position: relative;
+        z-index: 1000;
+
+        span {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        &.is-open {
+            span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            span:nth-child(2) {
+                opacity: 0;
+            }
+
+            span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    }
+}
+/*Pour tablette et plus on enlève le menu burger*/
+@media (min-width: 360px) {
+    .header {
+        &__burger {
+            display: none;
+        }
+
+        &__nav {
+            position: static;
+            transform: none;
+            opacity: 1;
+            pointer-events: auto;
+            background-color: transparent;
+        }
+
+        &__ul {
+            flex-direction: row;
+            gap: 30px;
+            padding: 0;
+        }
+    }
+    .footer {
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 50px;
+
+        &__contact {
+            flex-direction: row;
+            gap: 30px;
+            margin-bottom: 0;
+            list-style: none;
+        }
+
+        &__social {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/*Pour téléphone*/
+@media (max-width: 360px) {
+    .header{
+        &__ul{
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}
+
+
+/*FOOTER*/
+.footer {
+    background-color: #ade8f4;
+    color: #000;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+
+        & .footer__info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            & img.footer__icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &__social {
+        margin-bottom: 15px;
+
+        a img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__copyright {
+        display: block;
+        font-size: 12px;
+        color: #333;
+    }
+}

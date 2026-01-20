@@ -1,0 +1,12 @@
+{
+  "name": "units-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:sass": "sass units/style.scss:units/styles.css",
+    "watch:sass": "sass --watch units/style.scss:units/styles.css"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}
